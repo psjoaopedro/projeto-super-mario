@@ -14,22 +14,23 @@ OBJETIVO 2 - quando o usuário clicar no X devemos fechar a modal.
 
 */
 
-
-
 const botaoTrailer = document.querySelector('.trailer-btn')
+const botaoFecharModal = document.querySelector('.modal-close')
 const video = document.getElementById('video')
 const modal = document.querySelector('.modal')
-const botaoFecharModal = document.querySelector('.modal-close')
 const linkDoVideo = video.src
 
+function alternarModal() {
+    modal.classList.toggle('open')
+}
 
 botaoTrailer.addEventListener('click', () => {
-    modal.classList.add('open')
+    alternarModal()
     video.setAttribute('src', linkDoVideo)
 })
 
 botaoFecharModal.addEventListener('click', () => {
-    modal.classList.remove('open')
+    alternarModal()
     video.setAttribute('src', '')
 })
 
